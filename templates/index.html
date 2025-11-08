@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anemia Predictor</title>
+  <style>
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      font-family: Arial, sans-serif;
+    }
+    .hero {
+      background: url('/static/blood.jpeg') center/cover no-repeat;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 50px;
+      background: rgba(0,0,0,0.6);
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+    .hero-content {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .hero-content h1 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .check-btn {
+      background: red;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <nav>
+      <div class="logo"><b>Anemia</b></div>
+      <div>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('home') }}">About</a>
+        <a href="{{ url_for('predict_page') }}">Predict</a>
+        <a href="#">Contact</a>
+      </div>
+      <form action="{{ url_for('predict_page') }}">
+        <button class="check-btn">Check</button>
+      </form>
+    </nav>
+
+    <div class="hero-content">
+      <h1>Anemia Predictor: Your Health Guardian</h1>
+      <p>Empowering you with early detection for better management and healthier living</p>
+    </div>
+  </div>
+</body>
+</html>
